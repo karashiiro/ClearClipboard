@@ -1,14 +1,7 @@
-﻿using System;
+﻿using System.Threading;
 using System.Windows.Forms;
 
-namespace ClearClipboard
-{
-    public static class ClearClipboard
-    {
-        [STAThread]
-        public static void Main()
-        {
-            Clipboard.Clear();
-        }
-    }
-}
+var t = new Thread(Clipboard.Clear);
+t.SetApartmentState(ApartmentState.STA);
+t.Start();
+t.Join();
