@@ -1,7 +1,11 @@
-﻿using System.Threading;
+﻿using System;
 using System.Windows.Forms;
 
-var t = new Thread(Clipboard.Clear);
-t.SetApartmentState(ApartmentState.STA);
-t.Start();
-t.Join();
+public static class ClearClipboard
+{
+    [STAThread]
+    public static void Main()
+    {
+        Clipboard.Clear();
+    }
+}
