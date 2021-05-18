@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
 
-public static class ClearClipboard
+namespace ClearClipboard
 {
-    [STAThread]
-    public static void Main()
+    public static class ClearClipboard
     {
-        Clipboard.Clear();
+        [STAThread]
+        public static void Main()
+        {
+            Clipboard.Clear();
+        }
     }
 }
